@@ -20,7 +20,7 @@ public class IETest extends BaseTest {
 		new MainPage(driver)
 		.loadMainPage()
 		.navigateToLogin()
-		.loginWithValidCredentials("pack1test1", "123456789");
+		.loginWithValidCredentials("pack1test", "123456789");
 		}
 	
 }
