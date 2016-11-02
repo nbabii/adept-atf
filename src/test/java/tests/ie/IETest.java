@@ -10,14 +10,14 @@ public class IETest extends BaseTest {
 
 	@Test (groups = {"all"})
 	public void loadingMainPageTest(){
-		new MainPage(driver)
+		new MainPage(webDriver)
 		.loadMainPage().makeScreenshot()
 		.navigateToLogin().makeScreenshot();
 		}
 	
 	@Test (groups = {"all"})
 	public void loadingMainSecondPageTest(){
-		new MainPage(driver)
+		new MainPage(webDriver)
 		.loadMainPage()
 		.navigateToLogin()
 		.loginWithValidCredentials("pack1test", "123456789");

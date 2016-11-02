@@ -1,29 +1,24 @@
 package tests.core;
 
-import java.io.File;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.*;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class BaseTest {
 
-	protected WebDriver driver;
-	
-	
+	protected RemoteWebDriver webDriver; 
+	protected WebDriverManager driverInstance;
 	
 	@BeforeSuite(alwaysRun = true)	
 	public void beforeTest(){
-		File ieDrv = new File("src/main/resources/drivers/IEDriverServer.exe");
-		System.setProperty("webdriver.ie.driver",ieDrv.getAbsolutePath());
-		driver = new InternetExplorerDriver();		
+		driverInstance = new WebDriverManager();
+		webDriver = driverInstance.getInstance("ie", "11");
 	}
 	
 	@AfterSuite(alwaysRun = true)	
 	public void afterTest(){
-		driver.close();
-		driver.quit();
+		driverInstance.killWebDriverInstance();
 	System.setProperty("allure.results.directory", "path/to/directory");
 	}
-	
+
 }
