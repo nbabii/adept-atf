@@ -8,6 +8,7 @@ import web.pageobjects.abstractions.AdeptWebPage;
 import web.pageuicontrols.controls.WebButton;
 import web.pageuicontrols.controls.WebInput;
 
+//Login page pageobject
 public class LoginPage extends AdeptWebPage<LoginPage> {	
 	
 	private WebButton btnLogin = new WebButton(driver, getScreenName(), By.xpath("//*[@id='user-login-el']"));

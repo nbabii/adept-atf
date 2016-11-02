@@ -8,6 +8,7 @@ import tests.core.ScreenshotHelper;
 import web.pageobjects.abstractions.AdeptWebPage;
 import web.pageuicontrols.controls.WebButton;
 
+//Main page pageobject
 public class MainPage extends AdeptWebPage<MainPage> {
 
 	private WebButton btnLogin = new WebButton(driver, getScreenName(), By.xpath("//li[3]/a"));

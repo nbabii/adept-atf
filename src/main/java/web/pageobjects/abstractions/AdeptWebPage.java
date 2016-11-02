@@ -2,6 +2,7 @@ package web.pageobjects.abstractions;
 
 import org.openqa.selenium.WebDriver;
 
+//Main abstract pageobject
 public abstract class AdeptWebPage<S extends AdeptWebPage<S>> {
 
 	protected WebDriver driver;	

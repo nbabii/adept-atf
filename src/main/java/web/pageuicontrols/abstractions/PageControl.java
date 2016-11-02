@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
-
+//Main abstract object for Web UI controls
 public abstract class PageControl implements WebElement {
 
 	protected WebDriver driver;
