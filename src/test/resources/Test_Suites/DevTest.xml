@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Adept Web Client">
+	<test name="Web Page Demo Test 1">		
+		<groups>
+			<run>
+				<include name="all" />
+			</run>
+		</groups>
+		<classes>
+			<class name="tests.ie.IETest" />			
+		</classes>
+	</test>	
+</suite>
