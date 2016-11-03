@@ -8,12 +8,12 @@ import web.pageobjects.pages.MainPage;
 
 public class IETest extends BaseTest {
 
-	@Test (groups = {"all"})
+/*	@Test (groups = {"all"})
 	public void loadingMainPageTest(){
 		new MainPage(webDriver)
 		.loadMainPage().makeScreenshot()
 		.navigateToLogin().makeScreenshot();
-		}
+		}*/
 	
 	@Test (groups = {"all"})
 	public void loadingMainSecondPageTest(){

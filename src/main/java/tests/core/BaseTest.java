@@ -1,24 +1,23 @@
 package tests.core;
 
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
-	protected RemoteWebDriver webDriver; 
+	protected WebDriver webDriver; 
 	protected WebDriverManager driverInstance;
 	
-	@BeforeSuite(alwaysRun = true)	
+	@BeforeTest(alwaysRun = true)	
 	public void beforeTest(){
 		driverInstance = new WebDriverManager();
-		webDriver = driverInstance.getInstance("ie", "11");
+		webDriver = driverInstance.getInstance("internet explorer", "11");
 	}
 	
-	@AfterSuite(alwaysRun = true)	
+	@AfterTest(alwaysRun = true)	
 	public void afterTest(){
-		driverInstance.killWebDriverInstance();
-	System.setProperty("allure.results.directory", "path/to/directory");
+	driverInstance.killWebDriverInstance();
 	}
 
 }

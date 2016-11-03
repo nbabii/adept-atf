@@ -1,9 +1,9 @@
 package tests.core;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -14,10 +14,10 @@ public class WebDriverManager {
 	public static final String IE_DRV_PATH = "src/main/resources/drivers/IEDriverServer.exe";
 	
 	/* Selenium Grid HUB address */
-	public static final String GRID_HUB = "http://localhost:5556/wd/hub";
+	public static final String GRID_HUB = "http://localhost:4444/wd/hub";
 	
 	/* Browsers constants */
-	public static final String IE = "ie";
+	public static final String IE = "internet explorer";
 	public static final String CHROME = "chrome";
 	public static final String FIREFOX = "firefox";
 	
@@ -31,16 +31,15 @@ public class WebDriverManager {
 	//Remote driver
 	private RemoteWebDriver webDriver;
 	
-	public RemoteWebDriver getInstance(String browserName, String browserVersion){		
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setJavascriptEnabled(true);
-		
+	public RemoteWebDriver getInstance(String browserName, String browserVersion){				
+				
 		if (IE.equalsIgnoreCase(browserName)) {
-			File ieDrv = new File(IE_DRV_PATH);
-			System.setProperty("webdriver.ie.driver",ieDrv.getAbsolutePath());			
-			capabilities = DesiredCapabilities.internetExplorer();
-			capabilities.setBrowserName(DesiredCapabilities.internetExplorer().getBrowserName());
-			switch (browserVersion){
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			/*File ieDrv = new File(IE_DRV_PATH);
+			System.setProperty("webdriver.ie.driver",ieDrv.getAbsolutePath());	*/					
+			capabilities.setBrowserName(IE);
+			capabilities.setPlatform(Platform.WINDOWS);
+			/*switch (browserVersion){
 				case IE_7:	capabilities.setVersion(IE_7);
 							break;
 				case IE_8:	capabilities.setVersion(IE_8);
@@ -52,14 +51,14 @@ public class WebDriverManager {
 				case IE_11:	capabilities.setVersion(IE_11);
 							break;				
 				default:	throw new RuntimeException("Invalid browser version provided");										
-			}
+			}*/
 			try {
+				System.out.println("-------" + capabilities);
 				webDriver = new RemoteWebDriver(new URL(GRID_HUB), capabilities);
 			} catch (MalformedURLException e) {
 				throw new RuntimeException("Got a MalformedURLException during IE 7 driver initialization.");
-			}
-			
-		} else throw new RuntimeException("Invalid browser name provided");
+			}			
+		}  else throw new RuntimeException("Invalid browser name provided");
 		
 		return webDriver;
 	}
