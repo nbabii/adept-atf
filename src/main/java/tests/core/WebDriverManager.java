@@ -22,11 +22,11 @@ public class WebDriverManager {
 	public static final String FIREFOX = "firefox";
 	
 	/* IE Browser versions constants */
-	public static final String IE_7 = "7";
-	public static final String IE_8 = "8";
-	public static final String IE_9 = "9";
-	public static final String IE_10 = "10";
-	public static final String IE_11 = "11";
+	public static final String IE_7 = "7.0";
+	public static final String IE_8 = "8.0";
+	public static final String IE_9 = "9.0";
+	public static final String IE_10 = "10.0";
+	public static final String IE_11 = "11.0";
 	
 	//Remote driver
 	private RemoteWebDriver webDriver;
@@ -39,7 +39,7 @@ public class WebDriverManager {
 			System.setProperty("webdriver.ie.driver",ieDrv.getAbsolutePath());	*/					
 			capabilities.setBrowserName(IE);
 			capabilities.setPlatform(Platform.WINDOWS);
-			/*switch (browserVersion){
+			switch (browserVersion){
 				case IE_7:	capabilities.setVersion(IE_7);
 							break;
 				case IE_8:	capabilities.setVersion(IE_8);
@@ -51,7 +51,7 @@ public class WebDriverManager {
 				case IE_11:	capabilities.setVersion(IE_11);
 							break;				
 				default:	throw new RuntimeException("Invalid browser version provided");										
-			}*/
+			}
 			try {
 				System.out.println("-------" + capabilities);
 				webDriver = new RemoteWebDriver(new URL(GRID_HUB), capabilities);

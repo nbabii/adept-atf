@@ -12,7 +12,7 @@ public class BaseTest {
 	@BeforeTest(alwaysRun = true)	
 	public void beforeTest(){
 		driverInstance = new WebDriverManager();
-		webDriver = driverInstance.getInstance("internet explorer", "11");
+		webDriver = driverInstance.getInstance("internet explorer", "11.0");
 	}
 	
 	@AfterTest(alwaysRun = true)	

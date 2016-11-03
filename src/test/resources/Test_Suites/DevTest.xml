@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Adept Web Client" parallel="tests" thread-count="2">
+<suite name="Adept Web Client" parallel="tests" thread-count="1">
 	
 		<test name="Web Page Demo Test 1">
 			<groups>
