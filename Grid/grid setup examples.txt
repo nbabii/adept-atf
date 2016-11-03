@@ -1,5 +1,5 @@
 /* Grid Hub setup example */
-java -jar selenium-server-standalone-3.0.1.jar -port 4444 -role hub
+java -jar selenium-server-standalone-3.0.1.jar -maxSession 2 -port 4444 -role hub
 
 /* Grid Node setup example for IE with registering to Hub */
-java -Dwebdriver.ie.driver=D:\WORKSPACE\adept-atf\src\main\resources\drivers\IEDriverServer.exe -jar selenium-server-standalone-3.0.1.jar -role node -hub http://localhost:4444/grid/register  -browser browserName="internet explorer",version=11.0,platform=WINDOWS,maxInstances=1 -port 5551
+java -Dwebdriver.ie.driver=D:\WORKSPACE\adept-atf\src\main\resources\drivers\IEDriverServer.exe -jar selenium-server-standalone-3.0.1.jar -role node -hub http://localhost:4444/grid/register  -browser browserName="internet explorer",version=11.0,platform=WINDOWS,maxInstances=1 -maxSession 1 -port 5551

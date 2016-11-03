@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Adept Web Client" parallel="tests" thread-count="1">
+<suite name="Adept Web Client" parallel="tests" thread-count="2">
 	
-		<test name="Web Page Demo Test 1">
+		<test name="Web Page Demo Test 1" thread-count="1">
 			<groups>
 				<run>
 					<include name="all" />
@@ -11,5 +11,16 @@
 				<class name="tests.ie.IETest" />
 			</classes>
 		</test>	
+		
+		<test name="Web Page Demo Test 2" thread-count="1">
+			<groups>
+				<run>
+					<include name="all" />
+				</run>
+			</groups>
+			<classes>
+				<class name="tests.ie.IETest" />
+			</classes>
+		</test>
 			
 </suite>
