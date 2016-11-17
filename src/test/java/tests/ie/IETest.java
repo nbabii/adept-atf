@@ -11,8 +11,8 @@ public class IETest extends BaseTest {
 	@Test (groups = {"all"})
 	public void loadingMainPageTest(){
 		new MainPage(webDriver)
-		.loadMainPage().makeScreenshot()
-		.navigateToLogin().makeScreenshot();
+		.loadMainPage()
+		.navigateToLogin();
 		}
 	
 	@Test (groups = {"all1"})

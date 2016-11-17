@@ -11,10 +11,10 @@ import web.pageuicontrols.controls.WebInput;
 //Login page pageobject
 public class LoginPage extends AdeptWebPage<LoginPage> {	
 	
-	private WebButton btnLogin = new WebButton(driver, getScreenName(), By.xpath("//*[@id='user-login-el']"));
+	private WebButton btnLogin = new WebButton(driver, getPageName(), By.xpath("//*[@id='user-login-el']"));
 	
-	private WebInput inptUsername = new WebInput(driver, getScreenName(), By.xpath("//*[@id='username-el']"));
-	private WebInput inptPassword = new WebInput(driver, getScreenName(), By.xpath("//*[@id='Password-el']"));
+	private WebInput inptUsername = new WebInput(driver, getPageName(), By.xpath("//*[@id='username-el']"));
+	private WebInput inptPassword = new WebInput(driver, getPageName(), By.xpath("//*[@id='Password-el']"));
 	
 	protected LoginPage(WebDriver driver) {
 		super(driver);
@@ -31,7 +31,7 @@ public class LoginPage extends AdeptWebPage<LoginPage> {
 
 	@Override
 	public LoginPage makeScreenshot() {
-		ScreenshotHelper.makeScreenshot(driver, getScreenName());
+		ScreenshotHelper.makeScreenshot(driver, getPageName());
 		return this;
 	}
 	

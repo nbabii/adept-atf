@@ -11,7 +11,7 @@ import web.pageuicontrols.controls.WebButton;
 //Main page pageobject
 public class MainPage extends AdeptWebPage<MainPage> {
 
-	private WebButton btnLogin = new WebButton(driver, getScreenName(), By.xpath("//li[3]/a"));
+	private WebButton btnLogin = new WebButton(driver, getPageName(), By.xpath("//li[3]/a"));
 	
 	public MainPage(WebDriver driver) {
 		super(driver);		
@@ -25,7 +25,7 @@ public class MainPage extends AdeptWebPage<MainPage> {
 	
 	@Override
 	public MainPage makeScreenshot() {
-		ScreenshotHelper.makeScreenshot(driver, getScreenName());
+		ScreenshotHelper.makeScreenshot(driver, getPageName());
 		return this;
 	}
 	

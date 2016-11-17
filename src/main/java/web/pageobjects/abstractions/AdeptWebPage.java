@@ -14,7 +14,7 @@ public abstract class AdeptWebPage<S extends AdeptWebPage<S>> {
 		this.driver = driver;
 	}
 	
-	protected String getScreenName(){
+	protected String getPageName(){
 		return this.getClass().getSimpleName();
 	}
 }
