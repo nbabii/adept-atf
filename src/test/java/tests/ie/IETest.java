@@ -3,24 +3,20 @@ package tests.ie;
 import org.testng.annotations.Test;
 
 import tests.core.BaseTest;
-import web.pageobjects.pages.MainPage;
+import utils.PropertyLoader;
+import web.pageobjects.pages.LoginPage;
 
 
 public class IETest extends BaseTest {
 
 	@Test (groups = {"all"})
-	public void loadingMainPageTest(){
-		new MainPage(webDriver)
-		.loadMainPage()
-		.navigateToLogin();
+	public void loginPageTest(){
+		new LoginPage(webDriver)
+				.loadLoginPage()
+				.checkIfPageIsAvailable()
+				.loginWithValidCredentials(PropertyLoader.loadFrameworkProperty("default.testAccount.username")
+						, PropertyLoader.loadFrameworkProperty("default.testAccount.password"));
 		}
-	
-	@Test (groups = {"all1"})
-	public void loadingMainSecondPageTest(){
-		new MainPage(webDriver)
-		.loadMainPage()
-		.navigateToLogin()
-		.loginWithValidCredentials("pack1test", "123456789");
-		}
-	
+
+
 }

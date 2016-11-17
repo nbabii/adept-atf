@@ -10,9 +10,9 @@
 			<classes>
 				<class name="tests.ie.IETest" />
 			</classes>
-		</test>	
-		
-		<test name="Web Page Demo Test 2" thread-count="1">
+		</test>
+
+<!--		<test name="Web Page Demo Test 2" thread-count="1">
 			<groups>
 				<run>
 					<include name="all1" />
@@ -21,6 +21,6 @@
 			<classes>
 				<class name="tests.ie.IETest" />
 			</classes>
-		</test>
+		</test>-->
 			
 </suite>

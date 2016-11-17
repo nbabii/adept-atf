@@ -3,43 +3,43 @@ package web.pageobjects.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import tests.core.ScreenshotHelper;
+import ru.yandex.qatools.allure.annotations.Step;
+import utils.PropertyLoader;
 import web.pageobjects.abstractions.AdeptWebPage;
 import web.pageuicontrols.controls.WebButton;
 import web.pageuicontrols.controls.WebInput;
 
 //Login page pageobject
 public class LoginPage extends AdeptWebPage<LoginPage> {	
-	
-	private WebButton btnLogin = new WebButton(driver, getPageName(), By.xpath("//*[@id='user-login-el']"));
-	
-	private WebInput inptUsername = new WebInput(driver, getPageName(), By.xpath("//*[@id='username-el']"));
-	private WebInput inptPassword = new WebInput(driver, getPageName(), By.xpath("//*[@id='Password-el']"));
-	
-	protected LoginPage(WebDriver driver) {
+
+	private WebInput inptUsername = new WebInput(driver, getPageName(), By.xpath("//*[@id='username']"));
+	private WebInput inptPassword = new WebInput(driver, getPageName(), By.xpath("//*[@id='inputPassword']"));
+
+	private WebButton btnLogin = new WebButton(driver, getPageName(), By.xpath("//input[contains(@class, 'buttonSubmit')]"));
+
+	public LoginPage(WebDriver driver) {
 		super(driver);
-		checkIfPageIsAvailable();
 	}
 
 	@Override
 	public LoginPage checkIfPageIsAvailable() {
-		inptUsername.isPresent();
-		inptPassword.isPresent();
-		btnLogin.isPresent();
+		inptUsername.checkElementPresence();
+		inptPassword.checkElementPresence();
+		btnLogin.checkElementPresence();
 		return this;
 	}
 
-	@Override
-	public LoginPage makeScreenshot() {
-		ScreenshotHelper.makeScreenshot(driver, getPageName());
-		return this;
+	@Step("Opening dev-adept login local page")
+	public LoginPage loadLoginPage(){
+		driver.navigate().to(PropertyLoader.loadFrameworkProperty("dev.server.loginlocal.url"));
+		return new LoginPage(driver);
 	}
-	
-	public MyAccountPage loginWithValidCredentials(String username, String password){
+
+	public RecordsSummaryPage loginWithValidCredentials(String username, String password){
 		inptUsername.sendKeys(username);
 		inptPassword.sendKeys(password);
 		btnLogin.click();
-		return new MyAccountPage(driver);
+		return new RecordsSummaryPage(driver);
 	}
-	
+
 }

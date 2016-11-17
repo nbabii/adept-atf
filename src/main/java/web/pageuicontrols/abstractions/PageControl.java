@@ -25,17 +25,16 @@ public abstract class PageControl implements WebElement {
 		this.screenName = screenName;
 	}	
 	
-	public boolean isPresent() {
+	public void checkElementPresence() {
+
 		try {
-			if (isDisplayed()){
-				return true;
-			}
+			isDisplayed();
 		} catch (NoSuchElementException ne) {
 			throw new NoSuchElementException(screenName + " Element <" + this.getClass().getSimpleName() + "> could not be found " + locator);			
 		}
-		return false;
+
 	}
-	
+
 	@Override
 	public void clear() {
 		driver.findElement(locator).clear();	

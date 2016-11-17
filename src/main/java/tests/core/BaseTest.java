@@ -3,6 +3,8 @@ package tests.core;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import ru.yandex.qatools.allure.annotations.Step;
+import web.pageobjects.pages.LoginPage;
 
 public class BaseTest {
 
@@ -19,5 +21,7 @@ public class BaseTest {
 	public void afterTest(){
 	driverInstance.killWebDriverInstance();
 	}
+
+
 
 }
