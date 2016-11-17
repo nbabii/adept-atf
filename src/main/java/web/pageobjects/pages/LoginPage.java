@@ -31,7 +31,7 @@ public class LoginPage extends AdeptWebPage<LoginPage> {
 
 	@Step("Opening dev-adept login local page")
 	public LoginPage loadLoginPage(){
-		driver.navigate().to(PropertyLoader.loadFrameworkProperty("dev.server.loginlocal.url"));
+		driver.navigate().to(PropertyLoader.loadFrameworkProperty("dev.server.login_local.url"));
 		return new LoginPage(driver);
 	}
 
