@@ -1,0 +1,19 @@
+PATH=$PATH:/usr/local/bin/
+PATH=$PATH:/Volumes/IMAC_Automation/AndroidSDK/tools
+PATH=$PATH:/Volumes/IMAC_Automation/AndroidSDK/platform-tools
+PATH=$PATH:/Volumes/IMAC_Automation/Maven/bin
+PATH=$PATH:/usr/local/lib/node_modules/deviceconsole
+PATH=$PATH:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/bin
+
+export PATH=/usr/local/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+export JENKINS_HOME=/Volumes/IMAC_Automation/Jenkins/JenkinsHome
+export ANDROID_HOME=/Volumes/IMAC_Automation/AndroidSDK/
+export M2_HOME=/Volumes/IMAC_Automation/Maven
+##
+# Your previous /Users/automation/.bash_profile file was backed up as /Users/automation/.bash_profile.macports-saved_2015-09-09_at_13:28:14
+##
+
+# MacPorts Installer addition on 2015-09-09_at_13:28:14: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
