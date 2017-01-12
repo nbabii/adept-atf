@@ -44,7 +44,7 @@ public class MobileDriverManager {
 			} else if (PlatformName.iOS.name().equalsIgnoreCase(platformName)){
 
 				capabilities.setCapability("automationName", "xcuitest");
-				capabilities.setCapability("sendKeyStrategy", "grouped");
+				capabilities.setCapability("sendKeyStrategy", "setValue");
 				capabilities.setCapability("interKeyDelay", "50");
 				capabilities.setCapability("newCommandTimeout", "180");
 				capabilities.setCapability("autoAcceptAlerts", "true");
@@ -58,9 +58,9 @@ public class MobileDriverManager {
 					Reporter.log("Preparing real iOS device... <br>", true);
 
 					capabilities.setCapability("realDeviceLogger", "/usr/local/lib/node_modules/deviceconsole/deviceconsole");
-					capabilities.setCapability("udid", deviceUDID);
+					capabilities.setCapability("udid", deviceUDID.toLowerCase());
 					capabilities.setCapability("app", PropertyLoader.loadFrameworkProperty("ios.ipa.path"));
-					//TODO
+					capabilities.setCapability("bundleid", PropertyLoader.loadFrameworkProperty("ios.ipa.bundleid"));
 
 				} else {
 

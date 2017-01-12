@@ -22,9 +22,9 @@ public class BaseTest {
 		//webDriver = webDriverManager.getInstance("internet explorer", "11.0");
 
 		mobileDriverManager = new MobileDriverManager();
-		IOSDriver = (IOSDriver<MobileElement>) mobileDriverManager.initialiseDriver("no", "iOS", "9.3"
-				, "iPad 2"
-				, PropertyLoader.loadFrameworkProperty("nymgo.ipad.black")
+		IOSDriver = (IOSDriver<MobileElement>) mobileDriverManager.initialiseDriver("yes", "iOS", "10.1"
+				, PropertyLoader.loadFrameworkProperty("nymgo.ipad.black.name")
+				, PropertyLoader.loadFrameworkProperty("nymgo.ipad.black.udid")
 				, "EN");
 
 	}
