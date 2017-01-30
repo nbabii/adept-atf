@@ -1,2 +1,2 @@
 #start appium server for iOS, command sample
-node . --log-level debug --address 172.24.223.95 --port 4724 --default-capabilities '{"nativeInstrumentsLib":true}'
+appium --log-level debug --address 172.24.223.95 --port 4724 --default-capabilities '{"nativeInstrumentsLib":true}'

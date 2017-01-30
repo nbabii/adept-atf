@@ -36,9 +36,12 @@ public class AdeptKeyboard extends IOSElement {
             if(StringUtils.isNumeric(symbol)){
 
                 btnSwitchToNumbers.click();
+
                 if(btnSwitchToChars == null)
                     btnSwitchToChars = new IOSButton(driver, MobileBy.xpath("//XCUIElementTypeButton[@name='ABC']"));
+
                 new IOSButton(driver, MobileBy.xpath("//XCUIElementTypeButton[@name='" + symbol.toLowerCase() + "']")).click();
+
                 btnSwitchToChars.click();
 
             } else {
